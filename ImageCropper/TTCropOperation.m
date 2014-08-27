@@ -35,13 +35,13 @@
     NSMutableArray* array = [NSMutableArray array];
     while (height-offset > 500) {
         
-        [array addObject: [self croppedImageWithOffset:height-offset-500 width:width sourceImage:img]];
+        [array addObject: [self croppedImageWithOffset:height-offset-500 width:width height:500 sourceImage:img]];
         offset += 500;
     }
     
     if (offset != height)
     {
-        [array addObject: [self croppedImageWithOffset:height-offset width:width sourceImage:img]];
+        [array addObject: [self croppedImageWithOffset:0 width:width height:height-offset sourceImage:img]];
     }
     
     NSString* str = [_url relativePath];
@@ -63,10 +63,11 @@
 
 - (CIImage*) croppedImageWithOffset:(NSInteger) offset
                               width:(CGFloat) width
+                             height:(CGFloat) height
                         sourceImage:(CIImage*) image
 {
     CIFilter *cropFilter = [CIFilter filterWithName:@"CICrop"];
-    CIVector *cropRect = [CIVector vectorWithX:0 Y:offset Z:width W:500];
+    CIVector *cropRect = [CIVector vectorWithX:0 Y:offset Z:width W:height];
     [cropFilter setValue:image forKey:@"inputImage"];
     [cropFilter setValue:cropRect forKey:@"inputRectangle"];
     return [cropFilter valueForKey:@"outputImage"];

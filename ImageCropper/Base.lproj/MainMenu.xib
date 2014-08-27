@@ -138,6 +138,39 @@
                 <subviews>
                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="jUm-56-VFx" customClass="TTDragAndDropView">
                         <rect key="frame" x="0.0" y="0.0" width="898" height="513"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="pZh-p6-SaT" customClass="TTPromptView">
+                                <rect key="frame" x="0.0" y="0.0" width="898" height="513"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1Hv-Z3-fyn">
+                                        <rect key="frame" x="197" y="206" width="504" height="100"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="拖拽到這裡" id="Gs5-az-YCF">
+                                            <font key="font" size="100" name="STHeitiSC-Light"/>
+                                            <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YUY-GZ-zLd">
+                                        <rect key="frame" x="325" y="314" width="249" height="36"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="將圖片或文件夾" id="RmH-R9-csQ">
+                                            <font key="font" size="35" name="STHeitiSC-Light"/>
+                                            <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="1Hv-Z3-fyn" secondAttribute="centerX" id="I9z-n7-U67"/>
+                                    <constraint firstAttribute="centerY" secondItem="1Hv-Z3-fyn" secondAttribute="centerY" constant="-0.5" id="XHT-3p-mQY"/>
+                                </constraints>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="pZh-p6-SaT" firstAttribute="top" secondItem="jUm-56-VFx" secondAttribute="top" id="2hh-rg-clO"/>
+                            <constraint firstAttribute="bottom" secondItem="pZh-p6-SaT" secondAttribute="bottom" id="End-Ps-Mb2"/>
+                            <constraint firstItem="pZh-p6-SaT" firstAttribute="leading" secondItem="jUm-56-VFx" secondAttribute="leading" id="m3K-Ok-2sX"/>
+                            <constraint firstAttribute="trailing" secondItem="pZh-p6-SaT" secondAttribute="trailing" id="y0d-bI-CWc"/>
+                        </constraints>
                     </customView>
                 </subviews>
                 <constraints>

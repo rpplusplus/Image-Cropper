@@ -7,7 +7,17 @@
 //
 
 #import "TTPromptView.h"
+@import QuartzCore;
 
 @implementation TTPromptView
+
+- (void) drawRect:(NSRect)dirtyRect
+{
+    [super drawRect:dirtyRect];
+    
+    [[NSColor grayColor] set];
+    [NSBezierPath setDefaultLineWidth: 5];
+    [NSBezierPath strokeRect: CGRectInset(dirtyRect, 50, 50)];
+}
 
 @end

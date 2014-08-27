@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AD3FDA7C19AE7AF2003E966E /* TTPromptView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3FDA7B19AE7AF2003E966E /* TTPromptView.m */; };
+		AD3FDA7E19AE7F3F003E966E /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = AD3FDA7D19AE7F3F003E966E /* AppIcon.icns */; };
 		ADC595ED19AD7D8300AF0164 /* TTCropOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC595EC19AD7D8300AF0164 /* TTCropOperation.m */; };
 		ADDB4E8E19AAD37A008F5DEA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADDB4E8D19AAD37A008F5DEA /* Cocoa.framework */; };
 		ADDB4E9819AAD37A008F5DEA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ADDB4E9619AAD37A008F5DEA /* InfoPlist.strings */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		AD3FDA7A19AE7AF2003E966E /* TTPromptView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTPromptView.h; sourceTree = "<group>"; };
 		AD3FDA7B19AE7AF2003E966E /* TTPromptView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTPromptView.m; sourceTree = "<group>"; };
+		AD3FDA7D19AE7F3F003E966E /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AppIcon.icns; sourceTree = "<group>"; };
 		ADC595EB19AD7D8300AF0164 /* TTCropOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCropOperation.h; sourceTree = "<group>"; };
 		ADC595EC19AD7D8300AF0164 /* TTCropOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCropOperation.m; sourceTree = "<group>"; };
 		ADDB4E8A19AAD37A008F5DEA /* ImageCropper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageCropper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +152,7 @@
 				ADC595EC19AD7D8300AF0164 /* TTCropOperation.m */,
 				AD3FDA7A19AE7AF2003E966E /* TTPromptView.h */,
 				AD3FDA7B19AE7AF2003E966E /* TTPromptView.m */,
+				AD3FDA7D19AE7F3F003E966E /* AppIcon.icns */,
 			);
 			path = ImageCropper;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD3FDA7E19AE7F3F003E966E /* AppIcon.icns in Resources */,
 				ADDB4E9819AAD37A008F5DEA /* InfoPlist.strings in Resources */,
 				ADDB4EA619AAD37A008F5DEA /* Images.xcassets in Resources */,
 				ADDB4E9E19AAD37A008F5DEA /* Credits.rtf in Resources */,
@@ -421,7 +425,6 @@
 		ADDB4EBC19AAD37A008F5DEA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImageCropper/ImageCropper-Prefix.pch";
@@ -434,7 +437,6 @@
 		ADDB4EBD19AAD37A008F5DEA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImageCropper/ImageCropper-Prefix.pch";
