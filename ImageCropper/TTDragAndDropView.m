@@ -8,13 +8,15 @@
 
 #import "TTDragAndDropView.h"
 #import "TTImagesFinder.h"
-
+#import "TTCropOperation.h"
 NSString *kPrivateDragUTI = @"com.liwushuo.imagecropper";
 
 @interface TTDragAndDropView() <NSDraggingDestination>
 {
     BOOL highlight;
 }
+
+@property (nonatomic, strong)   NSOperationQueue*   cropQueue;
 
 @end
 
@@ -65,22 +67,39 @@ NSString *kPrivateDragUTI = @"com.liwushuo.imagecropper";
     [[NSFileManager defaultManager] fileExistsAtPath:[url relativePath]
                                          isDirectory:&d];
     
-    return [NSImage canInitWithPasteboard: [sender draggingPasteboard]] || d;
+    NSArray* targetArray;
+    if([NSImage canInitWithPasteboard: [sender draggingPasteboard]]) {
+        targetArray = @[url];
+    }
+    else
+        targetArray = [TTImagesFinder findImageWithFolderURL:url];
+    
+    self.cropQueue = [NSOperationQueue new];
+    self.cropQueue.maxConcurrentOperationCount = 5;
+    
+    for (NSURL* u in targetArray) {
+        TTCropOperation* op = [TTCropOperation new];
+        op.url = u;
+        [self.cropQueue addOperation:op];
+    }
+    
+    return NO;
 }
 
 - (BOOL)performDragOperation:(id <NSDraggingInfo>)sender
 {
     if ( [sender draggingSource] != self ) {
         NSURL* fileURL;
-        
+        fileURL=[NSURL URLFromPasteboard: [sender draggingPasteboard]];
         
         if([NSImage canInitWithPasteboard: [sender draggingPasteboard]]) {
-            
+            TTCropOperation* op = [TTCropOperation new];
+            op.url = fileURL;
+            [op start];
         }
         
-        
         //if the drag comes from a file, set the window title to the filename
-        fileURL=[NSURL URLFromPasteboard: [sender draggingPasteboard]];
+        
         NSLog(@"%@", [TTImagesFinder findImageWithFolderURL:fileURL]);
         [[self window] setTitle: fileURL!=NULL ? [fileURL absoluteString] : @"(no name)"];
     }

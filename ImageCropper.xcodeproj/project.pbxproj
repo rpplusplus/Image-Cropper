@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD3FDA7C19AE7AF2003E966E /* TTPromptView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3FDA7B19AE7AF2003E966E /* TTPromptView.m */; };
+		ADC595ED19AD7D8300AF0164 /* TTCropOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC595EC19AD7D8300AF0164 /* TTCropOperation.m */; };
 		ADDB4E8E19AAD37A008F5DEA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADDB4E8D19AAD37A008F5DEA /* Cocoa.framework */; };
 		ADDB4E9819AAD37A008F5DEA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ADDB4E9619AAD37A008F5DEA /* InfoPlist.strings */; };
 		ADDB4E9A19AAD37A008F5DEA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDB4E9919AAD37A008F5DEA /* main.m */; };
@@ -35,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AD3FDA7A19AE7AF2003E966E /* TTPromptView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTPromptView.h; sourceTree = "<group>"; };
+		AD3FDA7B19AE7AF2003E966E /* TTPromptView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTPromptView.m; sourceTree = "<group>"; };
+		ADC595EB19AD7D8300AF0164 /* TTCropOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCropOperation.h; sourceTree = "<group>"; };
+		ADC595EC19AD7D8300AF0164 /* TTCropOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCropOperation.m; sourceTree = "<group>"; };
 		ADDB4E8A19AAD37A008F5DEA /* ImageCropper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageCropper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADDB4E8D19AAD37A008F5DEA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		ADDB4E9019AAD37A008F5DEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -140,6 +146,10 @@
 				ADDB4ECA19AAE81E008F5DEA /* TTDragAndDropView.m */,
 				ADEA925A19ACFEC3002448D1 /* TTImagesFinder.h */,
 				ADEA925B19ACFEC3002448D1 /* TTImagesFinder.m */,
+				ADC595EB19AD7D8300AF0164 /* TTCropOperation.h */,
+				ADC595EC19AD7D8300AF0164 /* TTCropOperation.m */,
+				AD3FDA7A19AE7AF2003E966E /* TTPromptView.h */,
+				AD3FDA7B19AE7AF2003E966E /* TTPromptView.m */,
 			);
 			path = ImageCropper;
 			sourceTree = "<group>";
@@ -276,8 +286,10 @@
 				ADDB4EA119AAD37A008F5DEA /* TTAppDelegate.m in Sources */,
 				ADDB4E9A19AAD37A008F5DEA /* main.m in Sources */,
 				ADDB4EC619AADC77008F5DEA /* TTMainWindow.m in Sources */,
+				ADC595ED19AD7D8300AF0164 /* TTCropOperation.m in Sources */,
 				ADDB4ECB19AAE81E008F5DEA /* TTDragAndDropView.m in Sources */,
 				ADDB4EC319AAD4F3008F5DEA /* NSImage+Corp.m in Sources */,
+				AD3FDA7C19AE7AF2003E966E /* TTPromptView.m in Sources */,
 				ADEA925C19ACFEC3002448D1 /* TTImagesFinder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

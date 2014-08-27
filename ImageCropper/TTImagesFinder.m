@@ -36,7 +36,7 @@
             {
                 if ([path hasSuffix:@"png"] || [path hasSuffix:@"jpg"] || [path hasSuffix:@"gif"] || [path hasSuffix:@"jepg"])
                 {
-                    [result addObject:path];
+                    [result addObject:[NSURL fileURLWithPath:path]];
                 }
             }
         }
