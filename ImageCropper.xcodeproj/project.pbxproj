@@ -11,6 +11,13 @@
 		AD3FDA7E19AE7F3F003E966E /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = AD3FDA7D19AE7F3F003E966E /* AppIcon.icns */; };
 		AD4AC5D41A0B0DAF00901033 /* TTDragAndDropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4AC5D21A0B0DAF00901033 /* TTDragAndDropViewController.m */; };
 		AD4AC5D51A0B0DAF00901033 /* TTDragAndDropViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD4AC5D31A0B0DAF00901033 /* TTDragAndDropViewController.xib */; };
+		AD86EEC71A0C6076006B2DB0 /* TTCropTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD86EEC51A0C6076006B2DB0 /* TTCropTaskViewController.m */; };
+		AD86EEC81A0C6076006B2DB0 /* TTCropTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD86EEC61A0C6076006B2DB0 /* TTCropTaskViewController.xib */; };
+		AD86EECA1A0CA87D006B2DB0 /* watermark.png in Resources */ = {isa = PBXBuildFile; fileRef = AD86EEC91A0CA87D006B2DB0 /* watermark.png */; };
+		AD86EED11A0CAF97006B2DB0 /* zhenbai_0.png in Resources */ = {isa = PBXBuildFile; fileRef = AD86EECD1A0CAF97006B2DB0 /* zhenbai_0.png */; };
+		AD86EED21A0CAF97006B2DB0 /* zhenbai_2.png in Resources */ = {isa = PBXBuildFile; fileRef = AD86EECE1A0CAF97006B2DB0 /* zhenbai_2.png */; };
+		AD86EED31A0CAF97006B2DB0 /* zhenbai_3.png in Resources */ = {isa = PBXBuildFile; fileRef = AD86EECF1A0CAF97006B2DB0 /* zhenbai_3.png */; };
+		AD86EED41A0CAF97006B2DB0 /* zhenbai_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = AD86EED01A0CAF97006B2DB0 /* zhenbai_bg.png */; };
 		ADC595ED19AD7D8300AF0164 /* TTCropOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC595EC19AD7D8300AF0164 /* TTCropOperation.m */; };
 		ADDB4E8E19AAD37A008F5DEA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADDB4E8D19AAD37A008F5DEA /* Cocoa.framework */; };
 		ADDB4E9819AAD37A008F5DEA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ADDB4E9619AAD37A008F5DEA /* InfoPlist.strings */; };
@@ -45,6 +52,14 @@
 		AD4AC5D11A0B0DAF00901033 /* TTDragAndDropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTDragAndDropViewController.h; sourceTree = "<group>"; };
 		AD4AC5D21A0B0DAF00901033 /* TTDragAndDropViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTDragAndDropViewController.m; sourceTree = "<group>"; };
 		AD4AC5D31A0B0DAF00901033 /* TTDragAndDropViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTDragAndDropViewController.xib; sourceTree = "<group>"; };
+		AD86EEC41A0C6076006B2DB0 /* TTCropTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCropTaskViewController.h; sourceTree = "<group>"; };
+		AD86EEC51A0C6076006B2DB0 /* TTCropTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCropTaskViewController.m; sourceTree = "<group>"; };
+		AD86EEC61A0C6076006B2DB0 /* TTCropTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTCropTaskViewController.xib; sourceTree = "<group>"; };
+		AD86EEC91A0CA87D006B2DB0 /* watermark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = watermark.png; sourceTree = "<group>"; };
+		AD86EECD1A0CAF97006B2DB0 /* zhenbai_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhenbai_0.png; sourceTree = "<group>"; };
+		AD86EECE1A0CAF97006B2DB0 /* zhenbai_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhenbai_2.png; sourceTree = "<group>"; };
+		AD86EECF1A0CAF97006B2DB0 /* zhenbai_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhenbai_3.png; sourceTree = "<group>"; };
+		AD86EED01A0CAF97006B2DB0 /* zhenbai_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhenbai_bg.png; sourceTree = "<group>"; };
 		ADC595EB19AD7D8300AF0164 /* TTCropOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCropOperation.h; sourceTree = "<group>"; };
 		ADC595EC19AD7D8300AF0164 /* TTCropOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCropOperation.m; sourceTree = "<group>"; };
 		ADDB4E8A19AAD37A008F5DEA /* ImageCropper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageCropper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,7 +170,15 @@
 				ADDB4EC919AAE81E008F5DEA /* TTDragAndDropView.h */,
 				ADDB4ECA19AAE81E008F5DEA /* TTDragAndDropView.m */,
 				AD4AC5D31A0B0DAF00901033 /* TTDragAndDropViewController.xib */,
+				AD86EEC41A0C6076006B2DB0 /* TTCropTaskViewController.h */,
+				AD86EEC51A0C6076006B2DB0 /* TTCropTaskViewController.m */,
+				AD86EEC61A0C6076006B2DB0 /* TTCropTaskViewController.xib */,
 				AD3FDA7D19AE7F3F003E966E /* AppIcon.icns */,
+				AD86EEC91A0CA87D006B2DB0 /* watermark.png */,
+				AD86EECD1A0CAF97006B2DB0 /* zhenbai_0.png */,
+				AD86EECE1A0CAF97006B2DB0 /* zhenbai_2.png */,
+				AD86EECF1A0CAF97006B2DB0 /* zhenbai_3.png */,
+				AD86EED01A0CAF97006B2DB0 /* zhenbai_bg.png */,
 			);
 			path = ImageCropper;
 			sourceTree = "<group>";
@@ -267,11 +290,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD86EED21A0CAF97006B2DB0 /* zhenbai_2.png in Resources */,
+				AD86EED11A0CAF97006B2DB0 /* zhenbai_0.png in Resources */,
 				AD3FDA7E19AE7F3F003E966E /* AppIcon.icns in Resources */,
 				ADDB4E9819AAD37A008F5DEA /* InfoPlist.strings in Resources */,
 				ADDB4EA619AAD37A008F5DEA /* Images.xcassets in Resources */,
 				ADDB4E9E19AAD37A008F5DEA /* Credits.rtf in Resources */,
+				AD86EEC81A0C6076006B2DB0 /* TTCropTaskViewController.xib in Resources */,
+				AD86EED31A0CAF97006B2DB0 /* zhenbai_3.png in Resources */,
 				ADDB4EA419AAD37A008F5DEA /* MainMenu.xib in Resources */,
+				AD86EECA1A0CA87D006B2DB0 /* watermark.png in Resources */,
+				AD86EED41A0CAF97006B2DB0 /* zhenbai_bg.png in Resources */,
 				AD4AC5D51A0B0DAF00901033 /* TTDragAndDropViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +326,7 @@
 				ADC595ED19AD7D8300AF0164 /* TTCropOperation.m in Sources */,
 				AD4AC5D41A0B0DAF00901033 /* TTDragAndDropViewController.m in Sources */,
 				ADDB4ECB19AAE81E008F5DEA /* TTDragAndDropView.m in Sources */,
+				AD86EEC71A0C6076006B2DB0 /* TTCropTaskViewController.m in Sources */,
 				AD3FDA7C19AE7AF2003E966E /* TTPromptView.m in Sources */,
 				ADEA925C19ACFEC3002448D1 /* TTImagesFinder.m in Sources */,
 			);

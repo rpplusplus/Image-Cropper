@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="TTDragAndDropViewController">
             <connections>
+                <outlet property="promptView" destination="4KK-CV-XE4" id="hlG-EP-UwF"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
