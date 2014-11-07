@@ -7,11 +7,14 @@
 //
 
 #import "TTAppDelegate.h"
+#import "TTDragAndDropViewController.h"
 
 @implementation TTAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    TTDragAndDropViewController* vc = [TTDragAndDropViewController new];
+    self.window.contentViewController = vc;
     
 }
 

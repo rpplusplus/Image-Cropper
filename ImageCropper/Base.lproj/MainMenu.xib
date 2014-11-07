@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6205" systemVersion="13E28" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6205"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -131,46 +132,13 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="898" height="513"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="898" height="513"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="jUm-56-VFx" customClass="TTDragAndDropView">
+                    <customView hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jUm-56-VFx" customClass="TTDragAndDropView">
                         <rect key="frame" x="0.0" y="0.0" width="898" height="513"/>
-                        <subviews>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="pZh-p6-SaT" customClass="TTPromptView">
-                                <rect key="frame" x="0.0" y="0.0" width="898" height="513"/>
-                                <subviews>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1Hv-Z3-fyn">
-                                        <rect key="frame" x="197" y="206" width="504" height="100"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="拖拽到這裡" id="Gs5-az-YCF">
-                                            <font key="font" size="100" name="STHeitiSC-Light"/>
-                                            <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YUY-GZ-zLd">
-                                        <rect key="frame" x="325" y="314" width="249" height="36"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="將圖片或文件夾" id="RmH-R9-csQ">
-                                            <font key="font" size="35" name="STHeitiSC-Light"/>
-                                            <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="centerX" secondItem="1Hv-Z3-fyn" secondAttribute="centerX" id="I9z-n7-U67"/>
-                                    <constraint firstAttribute="centerY" secondItem="1Hv-Z3-fyn" secondAttribute="centerY" constant="-0.5" id="XHT-3p-mQY"/>
-                                </constraints>
-                            </customView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="pZh-p6-SaT" firstAttribute="top" secondItem="jUm-56-VFx" secondAttribute="top" id="2hh-rg-clO"/>
-                            <constraint firstAttribute="bottom" secondItem="pZh-p6-SaT" secondAttribute="bottom" id="End-Ps-Mb2"/>
-                            <constraint firstItem="pZh-p6-SaT" firstAttribute="leading" secondItem="jUm-56-VFx" secondAttribute="leading" id="m3K-Ok-2sX"/>
-                            <constraint firstAttribute="trailing" secondItem="pZh-p6-SaT" secondAttribute="trailing" id="y0d-bI-CWc"/>
-                        </constraints>
                     </customView>
                 </subviews>
                 <constraints>
@@ -180,6 +148,7 @@
                     <constraint firstAttribute="bottom" secondItem="jUm-56-VFx" secondAttribute="bottom" id="xal-6b-4bA"/>
                 </constraints>
             </view>
+            <point key="canvasLocation" x="531" y="364.5"/>
         </window>
     </objects>
 </document>

@@ -9,7 +9,10 @@
 #import "TTDragAndDropView.h"
 #import "TTImagesFinder.h"
 #import "TTCropOperation.h"
+
 NSString *kPrivateDragUTI = @"com.liwushuo.imagecropper";
+NSString *const TTCropSourceNotificationKey = @"TTCropSourceNotificationKey";
+NSString *const TTCropSourceNotificationUserInfoKey = @"TTCropSourceNotificationUserInfoKey";
 
 @interface TTDragAndDropView() <NSDraggingDestination>
 {
@@ -74,37 +77,20 @@ NSString *kPrivateDragUTI = @"com.liwushuo.imagecropper";
     else
         targetArray = [TTImagesFinder findImageWithFolderURL:url];
     
-    self.cropQueue = [NSOperationQueue new];
-    self.cropQueue.maxConcurrentOperationCount = 5;
-    
-    for (NSURL* u in targetArray) {
-        TTCropOperation* op = [TTCropOperation new];
-        op.url = u;
-        [self.cropQueue addOperation:op];
-    }
+//    self.cropQueue = [NSOperationQueue new];
+//    self.cropQueue.maxConcurrentOperationCount = 5;
+//    
+//    for (NSURL* u in targetArray) {
+//        TTCropOperation* op = [TTCropOperation new];
+//        op.url = u;
+//        [self.cropQueue addOperation:op];
+//    }
+
+    [[NSNotificationCenter defaultCenter] postNotificationName:TTCropSourceNotificationKey
+                                                        object:nil
+                                                      userInfo:@{TTCropSourceNotificationUserInfoKey: targetArray}];
     
     return NO;
-}
-
-- (BOOL)performDragOperation:(id <NSDraggingInfo>)sender
-{
-    if ( [sender draggingSource] != self ) {
-        NSURL* fileURL;
-        fileURL=[NSURL URLFromPasteboard: [sender draggingPasteboard]];
-        
-        if([NSImage canInitWithPasteboard: [sender draggingPasteboard]]) {
-            TTCropOperation* op = [TTCropOperation new];
-            op.url = fileURL;
-            [op start];
-        }
-        
-        //if the drag comes from a file, set the window title to the filename
-        
-        NSLog(@"%@", [TTImagesFinder findImageWithFolderURL:fileURL]);
-        [[self window] setTitle: fileURL!=NULL ? [fileURL absoluteString] : @"(no name)"];
-    }
-    
-    return YES;
 }
 
 - (NSRect)windowWillUseStandardFrame:(NSWindow *)window defaultFrame:(NSRect)newFrame;
@@ -112,4 +98,5 @@ NSString *kPrivateDragUTI = @"com.liwushuo.imagecropper";
     NSRect ContentRect=self.window.frame;
     return [NSWindow frameRectForContentRect:ContentRect styleMask: [window styleMask]];
 };
+
 @end

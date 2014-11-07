@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="TTDragAndDropViewController">
+            <connections>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY" customClass="TTDragAndDropView">
+            <rect key="frame" x="0.0" y="0.0" width="671" height="380"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="4KK-CV-XE4" customClass="TTPromptView">
+                    <rect key="frame" x="0.0" y="0.0" width="671" height="380"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vcF-nh-UAj">
+                            <rect key="frame" x="84" y="139" width="504" height="100"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="拖拽到這裡" id="zXV-OA-Eg0">
+                                <font key="font" size="100" name="STHeitiSC-Light"/>
+                                <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SOo-OD-S6C">
+                            <rect key="frame" x="212" y="247" width="249" height="36"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="將圖片或文件夾" id="ll0-cM-qU9">
+                                <font key="font" size="35" name="STHeitiSC-Light"/>
+                                <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="centerY" secondItem="vcF-nh-UAj" secondAttribute="centerY" constant="-0.5" id="JAx-GC-EYf"/>
+                        <constraint firstAttribute="centerX" secondItem="vcF-nh-UAj" secondAttribute="centerX" id="KNP-Yb-w8o"/>
+                        <constraint firstItem="SOo-OD-S6C" firstAttribute="centerX" secondItem="vcF-nh-UAj" secondAttribute="centerX" id="Uj7-yv-WNn"/>
+                        <constraint firstItem="SOo-OD-S6C" firstAttribute="bottom" secondItem="vcF-nh-UAj" secondAttribute="bottom" constant="-108" id="cgm-Dn-5SX"/>
+                    </constraints>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="4KK-CV-XE4" secondAttribute="bottom" id="Isy-PA-wuh"/>
+                <constraint firstAttribute="trailing" secondItem="4KK-CV-XE4" secondAttribute="trailing" id="LZw-XH-OO7"/>
+                <constraint firstItem="4KK-CV-XE4" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="Wg2-Fj-LG7"/>
+                <constraint firstItem="4KK-CV-XE4" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="hBU-PF-dfi"/>
+            </constraints>
+            <point key="canvasLocation" x="307.5" y="323"/>
+        </customView>
+    </objects>
+</document>

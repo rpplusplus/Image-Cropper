@@ -8,6 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 
+extern NSString* const TTCropSourceNotificationKey;
+extern NSString* const TTCropSourceNotificationUserInfoKey;
+
 @interface TTDragAndDropView : NSImageView
 
 @end
