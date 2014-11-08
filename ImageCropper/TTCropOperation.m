@@ -49,7 +49,12 @@
         });
         
         NSImage* sourceImage = [[NSImage alloc] initWithContentsOfURL:self.url];
-        CGFloat sourceImageWidth = [(NSImageRep*)([sourceImage representations][0]) pixelsWide];
+        
+        NSImageRep* rep = (NSImageRep*)([sourceImage representations][0]);
+        NSSize sourceImagePixelSize = NSMakeSize([rep pixelsWide], [rep pixelsHigh]);
+                                        
+        CGFloat sourceImageWidth = sourceImagePixelSize.width;
+        [sourceImage setSize:sourceImagePixelSize];
         CGFloat watermarkWidth = sourceImageWidth / 4;
         
         CIImage* watermarkCIImage = [_watermarkImage CIImage];
@@ -63,7 +68,10 @@
         
         [sourceImage lockFocus];
         
-        [_watermarkImage drawAtPoint:CGPointMake(sourceImageWidth - watermarkWidth - 30, 30) fromRect:CGRectZero operation:NSCompositeSourceOver fraction:1.0];
+        [_watermarkImage drawAtPoint:CGPointMake(sourceImageWidth - watermarkWidth - 30, 30)
+                            fromRect:CGRectZero
+                           operation:NSCompositeSourceOver
+                            fraction:1.0];
         
         [sourceImage unlockFocus];
         
