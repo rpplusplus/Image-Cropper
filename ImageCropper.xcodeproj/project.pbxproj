@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD121DC11A0DB45E00E19D1B /* NSImage+CIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AD121DC01A0DB45E00E19D1B /* NSImage+CIImage.m */; };
+		AD121DC41A0DB4F000E19D1B /* CIImage+NSImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AD121DC31A0DB4F000E19D1B /* CIImage+NSImage.m */; };
+		AD121DC71A0DBD9700E19D1B /* TTImageProgressing.m in Sources */ = {isa = PBXBuildFile; fileRef = AD121DC61A0DBD9700E19D1B /* TTImageProgressing.m */; };
 		AD3FDA7C19AE7AF2003E966E /* TTPromptView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3FDA7B19AE7AF2003E966E /* TTPromptView.m */; };
 		AD3FDA7E19AE7F3F003E966E /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = AD3FDA7D19AE7F3F003E966E /* AppIcon.icns */; };
 		AD4AC5D41A0B0DAF00901033 /* TTDragAndDropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4AC5D21A0B0DAF00901033 /* TTDragAndDropViewController.m */; };
@@ -46,6 +49,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AD121DBF1A0DB45E00E19D1B /* NSImage+CIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+CIImage.h"; sourceTree = "<group>"; };
+		AD121DC01A0DB45E00E19D1B /* NSImage+CIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+CIImage.m"; sourceTree = "<group>"; };
+		AD121DC21A0DB4F000E19D1B /* CIImage+NSImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CIImage+NSImage.h"; sourceTree = "<group>"; };
+		AD121DC31A0DB4F000E19D1B /* CIImage+NSImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CIImage+NSImage.m"; sourceTree = "<group>"; };
+		AD121DC51A0DBD9700E19D1B /* TTImageProgressing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTImageProgressing.h; sourceTree = "<group>"; };
+		AD121DC61A0DBD9700E19D1B /* TTImageProgressing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTImageProgressing.m; sourceTree = "<group>"; };
 		AD3FDA7A19AE7AF2003E966E /* TTPromptView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTPromptView.h; sourceTree = "<group>"; };
 		AD3FDA7B19AE7AF2003E966E /* TTPromptView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTPromptView.m; sourceTree = "<group>"; };
 		AD3FDA7D19AE7F3F003E966E /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AppIcon.icns; sourceTree = "<group>"; };
@@ -173,12 +182,18 @@
 				AD86EEC41A0C6076006B2DB0 /* TTCropTaskViewController.h */,
 				AD86EEC51A0C6076006B2DB0 /* TTCropTaskViewController.m */,
 				AD86EEC61A0C6076006B2DB0 /* TTCropTaskViewController.xib */,
+				AD121DC51A0DBD9700E19D1B /* TTImageProgressing.h */,
+				AD121DC61A0DBD9700E19D1B /* TTImageProgressing.m */,
 				AD3FDA7D19AE7F3F003E966E /* AppIcon.icns */,
 				AD86EEC91A0CA87D006B2DB0 /* watermark.png */,
 				AD86EECD1A0CAF97006B2DB0 /* zhenbai_0.png */,
 				AD86EECE1A0CAF97006B2DB0 /* zhenbai_2.png */,
 				AD86EECF1A0CAF97006B2DB0 /* zhenbai_3.png */,
 				AD86EED01A0CAF97006B2DB0 /* zhenbai_bg.png */,
+				AD121DBF1A0DB45E00E19D1B /* NSImage+CIImage.h */,
+				AD121DC01A0DB45E00E19D1B /* NSImage+CIImage.m */,
+				AD121DC21A0DB4F000E19D1B /* CIImage+NSImage.h */,
+				AD121DC31A0DB4F000E19D1B /* CIImage+NSImage.m */,
 			);
 			path = ImageCropper;
 			sourceTree = "<group>";
@@ -321,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADDB4EA119AAD37A008F5DEA /* TTAppDelegate.m in Sources */,
+				AD121DC71A0DBD9700E19D1B /* TTImageProgressing.m in Sources */,
 				ADDB4E9A19AAD37A008F5DEA /* main.m in Sources */,
 				ADDB4EC619AADC77008F5DEA /* TTMainWindow.m in Sources */,
 				ADC595ED19AD7D8300AF0164 /* TTCropOperation.m in Sources */,
@@ -328,6 +344,8 @@
 				ADDB4ECB19AAE81E008F5DEA /* TTDragAndDropView.m in Sources */,
 				AD86EEC71A0C6076006B2DB0 /* TTCropTaskViewController.m in Sources */,
 				AD3FDA7C19AE7AF2003E966E /* TTPromptView.m in Sources */,
+				AD121DC41A0DB4F000E19D1B /* CIImage+NSImage.m in Sources */,
+				AD121DC11A0DB45E00E19D1B /* NSImage+CIImage.m in Sources */,
 				ADEA925C19ACFEC3002448D1 /* TTImagesFinder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

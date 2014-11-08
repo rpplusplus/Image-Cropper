@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="TTCropTaskViewController">
             <connections>
+                <outlet property="faceImageView" destination="zMo-cw-D3u" id="VIb-D2-VF3"/>
                 <outlet property="otherSize" destination="3lQ-kV-5AQ" id="uXR-pY-eK8"/>
                 <outlet property="sizeGroup" destination="s33-tO-F9N" id="Kjb-T9-8ja"/>
                 <outlet property="tableview" destination="rV5-er-ydO" id="YE4-LL-z0B"/>
@@ -152,12 +153,11 @@
                 </textField>
                 <scrollView autohidesScrollers="YES" horizontalLineScroll="28" horizontalPageScroll="10" verticalLineScroll="28" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZW-eO-OCQ">
                     <rect key="frame" x="0.0" y="-1" width="418" height="417"/>
-                    <clipView key="contentView" id="HxU-Ih-ZXm">
+                    <clipView key="contentView" misplaced="YES" id="HxU-Ih-ZXm">
                         <rect key="frame" x="1" y="0.0" width="238" height="134"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="26" headerView="rPR-nN-Nxf" viewBased="YES" id="rV5-er-ydO">
-                                <rect key="frame" x="0.0" y="0.0" width="238" height="134"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

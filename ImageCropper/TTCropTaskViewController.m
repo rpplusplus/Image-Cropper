@@ -7,18 +7,26 @@
 //
 
 #import "TTCropTaskViewController.h"
+#import "TTCropOperation.h"
 
-@interface TTCropTaskViewController () <NSTableViewDataSource, NSTableViewDelegate>
+@interface TTCropTaskViewController () <NSTableViewDataSource, NSTableViewDelegate, NSTextFieldDelegate>
+{
+    NSInteger             status[10000];
+}
 
-@property (weak) IBOutlet NSTableView *tableview;
-@property (weak) IBOutlet NSMatrix *sizeGroup;
-@property (weak) IBOutlet NSTextField *otherSize;
+@property (weak) IBOutlet NSTableView*      tableview;
+@property (weak) IBOutlet NSMatrix*         sizeGroup;
+@property (weak) IBOutlet NSTextField*      otherSize;
 
-@property (weak) IBOutlet NSImageView *watermarkImage;
+@property (weak) IBOutlet NSImageView*      watermarkImage;
+@property (weak) IBOutlet NSImageView*      faceImageView;
+@property (assign)        BOOL              workingFlag;
+@property (strong)        NSOperationQueue* queue;
 
 @end
 
 @implementation TTCropTaskViewController
+
 - (IBAction)watermarkImageClick:(id)sender {
     NSOpenPanel* panel = [NSOpenPanel openPanel];
     panel.allowedFileTypes = @[@"png"];
@@ -31,9 +39,91 @@
     }
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void) awakeFromNib
+{
+    [super awakeFromNib];
+    
+    NSClickGestureRecognizer* click = [[NSClickGestureRecognizer alloc] initWithTarget:self
+                                                                                action:@selector(doitButtonClick)];
+    [self.faceImageView addGestureRecognizer:click];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(otherSizeTextValueChanged:)
+                                                 name:NSControlTextDidChangeNotification
+                                               object:self.otherSize];
+    self.queue = [[NSOperationQueue alloc] init];
+    self.queue.maxConcurrentOperationCount = 3;
 }
+
+- (void) doitButtonClick
+{
+    if (self.workingFlag) return;
+    
+    self.workingFlag = YES;
+    self.faceImageView.image = [NSImage imageNamed:@"zhenbai_2"];
+    
+    for (int i=0; i<self.dataSource.count; i++) {
+        status[i] = 0;
+    }
+    
+    for (int i=0; i<self.dataSource.count; i++) {
+        TTCropOperation* op = [[TTCropOperation alloc] init];
+        op.url = self.dataSource[i];
+        op.watermarkImage = self.watermarkImage.image;
+        op.index = i;
+        op.vc = self;
+        
+        if (_otherSize.stringValue.integerValue != 0)
+        {
+            op.imageWidth = _otherSize.stringValue.integerValue;
+        }
+        else
+        {
+            op.imageWidth = self.sizeGroup.selectedColumn ? 440 : 640;
+        }
+        
+        [self.queue  addOperation:op];
+    }
+    
+}
+
+- (void) updateStatus:(NSInteger) s withIndex:(NSInteger) index
+{
+    @synchronized(self){
+        status[index] = s;
+        [self.tableview reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:index]
+                                  columnIndexes:[NSIndexSet indexSetWithIndex:0]];
+        
+        for (int i=0; i<self.dataSource.count; i++)
+        {
+            if (status[i] != 2) return;
+        }
+        
+        self.workingFlag = NO;
+        self.faceImageView.image = [NSImage imageNamed:@"zhenbai_3"];
+        NSAlert* alert = [[NSAlert alloc] init];
+        [alert setMessageText:@"轉換完成"];
+        [alert addButtonWithTitle:@"確定"];
+        [alert runModal];
+
+    }
+}
+
+#pragma mark - NSTextField notification
+
+- (void) otherSizeTextValueChanged:(NSNotification*) notification
+{
+    if ([_otherSize.stringValue integerValue] == 0)
+    {
+        self.sizeGroup.enabled = YES;
+    }
+    else
+    {
+        self.sizeGroup.enabled = NO;
+    }
+}
+
+#pragma mark - NSTableView Delegate And DataSource
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
@@ -57,11 +147,16 @@
         textField.textField.stringValue = [[self.dataSource[row] absoluteString]stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         return textField;
     } else if ([identifier isEqualToString:@"statusCell"]) {
-        
         NSTableCellView *textField = [tableView makeViewWithIdentifier:identifier owner:self];
-        textField.textField.stringValue = @"😑";
-        return textField;
         
+        if (status[row] == 0)
+            textField.textField.stringValue = @"😑";
+        if (status[row] == 1)
+            textField.textField.stringValue = @"😡";
+        if (status[row] == 2)
+            textField.textField.stringValue = @"✅";
+        
+        return textField;
     } else {
         NSAssert1(NO, @"Unhandled table column identifier %@", identifier);
     }

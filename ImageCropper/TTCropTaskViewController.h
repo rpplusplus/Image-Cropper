@@ -12,4 +12,6 @@
 
 @property (nonatomic, strong)   NSArray*    dataSource;
 
+- (void) updateStatus:(NSInteger) status withIndex:(NSInteger) index;
+
 @end
